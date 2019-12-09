@@ -49,11 +49,7 @@ namespace FASUtils
                 Logger.Log("Checking " + Name, this);
 
                 (online, Meta) = checkAction();
-
-                OnStateChanged(new StateChangedEventArgs { State = online ? ConnectState.CONNECTED : ConnectState.FAILED,
-                    Message = Name + Meta + ": " + (online ? "OK" : "ERROR") });
-
-                Logger.Log(Name + " Status: " + (online ? "ONLINE" : "OFFLINE"), this);
+                ChangeState(online ? ConnectState.CONNECTED : ConnectState.FAILED, (online ? "OK" : "ERROR"));
 
                 coninuationAction?.Invoke();
             });
@@ -61,6 +57,8 @@ namespace FASUtils
 
         public Task Check()
         {
+            ChangeState(ConnectState.CONNECTING, "checking...");
+
             switch (checkTask.Status)
             {
                 case TaskStatus.Created: checkTask.Start(); break;
@@ -69,6 +67,16 @@ namespace FASUtils
                 case TaskStatus.RanToCompletion: SetCheckAction(checkAction); checkTask.Start(); break;
             }
             return checkTask;
+        }
+
+        public void ChangeState(ConnectState state, string name)
+        {
+            OnStateChanged(new StateChangedEventArgs
+            {
+                State = state,
+                Message = Name + Meta + ": " + name
+            });
+            Logger.Debug(Name + Meta + " Status: " + name, this);
         }
     }
 
