@@ -51,4 +51,4 @@ steps:
     nuGetFeedType: 'internal'
     publishVstsFeed: 'FAS/TestFeed'
     versioningScheme: 'off'
-    allowPackageConflicts: true
+    allowPackageConflicts: false
