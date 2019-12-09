@@ -15,7 +15,6 @@ namespace FASUtils
         public int Timeout = 5000;
         protected Func<(bool, string)> checkAction;
         public Task checkTask;
-        //public Control control;
         public Action coninuationAction;
 
         public event EventHandler<StateChangedEventArgs> StateChanged;
@@ -53,16 +52,7 @@ namespace FASUtils
 
                 OnStateChanged(new StateChangedEventArgs { State = online ? ConnectState.CONNECTED : ConnectState.FAILED,
                     Message = Name + Meta + ": " + (online ? "OK" : "ERROR") });
-                /*
-                if (control != null)
-                {
-                    control.Invoke(new Action(() =>
-                    {
-                        control.BackColor = online ? ColorPalette.GOOD : ColorPalette.BAD;
-                        control.Text = Name + Meta + ": " + (online ? "OK" : "ERROR");
-                    }));
-                }
-                */
+
                 Logger.Log(Name + " Status: " + (online ? "ONLINE" : "OFFLINE"), this);
 
                 coninuationAction?.Invoke();
@@ -71,13 +61,6 @@ namespace FASUtils
 
         public Task Check()
         {
-
-            /*
-            if (control != null)
-            {
-                control.BackColor = ColorPalette.WARN;
-                control.Text = Name + Meta + ": checking...";
-            }*/
             switch (checkTask.Status)
             {
                 case TaskStatus.Created: checkTask.Start(); break;

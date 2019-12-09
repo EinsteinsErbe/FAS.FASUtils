@@ -10,7 +10,6 @@ namespace FASUtils.NI
     public class NIServer : Connectable
     {
         public AuthenticationHeaderValue NIAUTHHEADER;
-        public string URL;
         public string user;
         public string password;
 

@@ -10,7 +10,7 @@ namespace FASUtils
     {
         public static Connectable INTERNET = new Internet();
 
-        public string URL { get; }
+        public string URL { get; protected set; }
 
         public Connectable(string URL, string Name) : base(Name)
         {

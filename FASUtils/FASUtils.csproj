@@ -3,13 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>A collection of functions for the FAS team (e.g. NI SystemLink API)</Description>
-    <Version>0.1.0</Version>
+    <Version>1.0.0</Version>
     <RepositoryUrl>https://dev.azure.com/ABB-BDB-CHSEM/FAS/_git/FASUtils</RepositoryUrl>
     <Company>CHSEM</Company>
     <Authors>Manuel Jordan</Authors>
-    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <FileVersion>0.0.0.0</FileVersion>
+    <FileVersion>1.0.0.0</FileVersion>
     <PackageId>FAS.FASUtils</PackageId>
   </PropertyGroup>
 
