@@ -184,7 +184,7 @@ namespace FASUtils.NI
         }
     }
 
-    internal class JsonNIMail
+    public class JsonNIMail
     {
         public string uniqueId;
         public string from;
