@@ -194,7 +194,7 @@ namespace FASUtils.NI
 
         internal JsonNIMail() { }
 
-        internal JsonNIMail(string from, string subject, string body, params string[] recipients)
+        public JsonNIMail(string from, string subject, string body, params string[] recipients)
         {
             this.from = from;
             this.subject = subject;
@@ -202,7 +202,7 @@ namespace FASUtils.NI
             this.recipients = recipients;
         }
 
-        internal JsonNIMailConfirmation Validate()
+        public JsonNIMailConfirmation Validate()
         {
             JsonNIMailConfirmation result = new JsonNIMailConfirmation(uniqueId);
 
