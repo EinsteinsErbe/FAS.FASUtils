@@ -233,7 +233,7 @@ namespace FASUtils.NI
             }
             foreach (string r in recipients)
             {
-                if (!r.EndsWith("@ch.abb.com"))
+                if (!r?.EndsWith("@ch.abb.com") ?? true)
                 {
                     result.valid = false;
                     result.msg += "Invalid recipient: " + r + Environment.NewLine;

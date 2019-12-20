@@ -30,7 +30,7 @@ namespace FASUtils.NI
 
         public const string BOOT = ".Boot";
         public const string BOOTEXPECTED = ".BootExpected";
-        public const string SEDATE = ".DoP";
+        public const string SEDATE = ".DoD";
 
         private AuthenticationHeaderValue NIAUTHHEADER;
 
